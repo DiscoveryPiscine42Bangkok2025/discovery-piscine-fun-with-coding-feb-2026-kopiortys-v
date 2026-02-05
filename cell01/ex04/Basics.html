@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ff69b4; /* Pink background */
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+        }
+        
+        .main-title {
+            color: white;
+            font-size: 3.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .title-note {
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .shops-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .shop-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 500px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .shop-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 3px solid #ff1493;
+        }
+        
+        .shop-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .shop-name {
+            font-size: 1.8rem;
+            color: #c71585;
+            margin-bottom: 15px;
+        }
+        
+        .shop-link {
+            display: inline-block;
+            background-color: #ff1493;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .shop-link:hover {
+            background-color: #db0d7c;
+        }
+        
+        .separator {
+            height: 3px;
+            background-color: white;
+            margin: 40px auto;
+            width: 95%;
+            max-width: 1200px;
+            border-radius: 2px;
+        }
+        
+        .footer {
+            text-align: right;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-style: italic;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 1100px) {
+            .shop-card {
+                max-width: 450px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .shops-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .shop-card {
+                max-width: 90%;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-title">Online Shopping Essentials&nbsp;✨</h1>
+        <p class="title-note">"Pink? What's wrong with pink?" - This color choice is intentional!</p>
+    </div>
+    
+    <div class="shops-container">
+        <div class="shop-card">
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Amazon shopping interface" class="shop-image">
+            <div class="shop-info">
+                <h2 class="shop-name">Amazon</h2>
+                <a href="https://www.amazon.com" target="_blank" class="shop-link">Visit Amazon</a>
+            </div>
+        </div>
+        
+        <div class="shop-card">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Etsy handmade marketplace" class="shop-image">
+            <div class="shop-info">
+                <h2 class="shop-name">Etsy</h2>
+                <a href="https://www.etsy.com" target="_blank" class="shop-link">Visit Etsy</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="footer">
+        <p>© wil 2026</p>
+    </div>
+    
+    <script>
+        // Update the copyright year to always show current year
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.footer p');
+            copyrightElement.textContent = `© wil ${currentYear}`;
+        });
+    </script>
+</body>
+</html>
