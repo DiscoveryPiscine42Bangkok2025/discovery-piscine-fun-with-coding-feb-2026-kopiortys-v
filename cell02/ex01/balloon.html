@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Balloon with Pop</title>
+    <style>
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            transition: transform 0.2s;
+        }
+        
+        .balloon:hover {
+            transform: scale(1.05);
+        }
+        
+        .balloon-text {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon">
+        <div class="balloon-text" id="balloonText">Click me!</div>
+    </div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const balloonText = document.getElementById('balloonText');
+        
+        let balloonSize = 200;
+        let balloonColorIndex = 0;
+        
+        const colors = ['#ff0000', '#00ff00', '#0000ff'];
+        const colorNames = ['Red', 'Green', 'Blue'];
+        
+        function updateBalloon() {
+            balloon.style.width = `${balloonSize}px`;
+            balloon.style.height = `${balloonSize}px`;
+            balloon.style.backgroundColor = colors[balloonColorIndex];
+            
+            if (balloonSize >= 400) {
+                balloonText.textContent = 'Danger!';
+            } else if (balloonSize >= 300) {
+                balloonText.textContent = 'Big!';
+            } else if (balloonSize >= 250) {
+                balloonText.textContent = 'Growing!';
+            } else {
+                balloonText.textContent = 'Click me!';
+            }
+        }
+        
+        function popBalloon() {
+            // Reset balloon after popping
+            balloonSize = 200;
+            balloonColorIndex = 0;
+            updateBalloon();
+            
+            // Optional: Add a simple alert or console message
+            console.log("Balloon popped!");
+        }
+        
+        balloon.addEventListener('click', function() {
+            balloonSize += 10;
+            balloonColorIndex = (balloonColorIndex + 1) % 3;
+            
+            // Check if balloon should pop (size > 420px)
+            if (balloonSize > 420) {
+                popBalloon();
+                return;
+            }
+            
+            updateBalloon();
+        });
+        
+        balloon.addEventListener('mouseleave', function() {
+            if (balloonSize > 200) {
+                balloonSize -= 5;
+                if (balloonSize < 200) balloonSize = 200;
+                balloonColorIndex = (balloonColorIndex - 1 + 3) % 3;
+                updateBalloon();
+            }
+        });
+        
+        updateBalloon();
+    </script>
+</body>
+</html>
