@@ -1,0 +1,42 @@
+/* Base styles for all screen sizes */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  min-height: 1000px; /* Changed from height to min-height for better responsiveness */
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive styles for tablets (768px and below) */
+@media screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+    float: none; /* Remove float for stacked layout */
+    min-height: auto; /* Allow height to adjust based on content */
+    height: auto;
+  }
+  
+  .row {
+    display: block;
+  }
+}
+
+/* Optional: Additional breakpoint for very small screens (480px and below) */
+@media screen and (max-width: 480px) {
+  .column {
+    padding: 8px; /* Reduce padding on very small screens */
+  }
+}
+
+/* Optional: For screens larger than 1200px, you can add max-width to prevent columns from becoming too wide */
+@media screen and (min-width: 1200px) {
+  .row {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
