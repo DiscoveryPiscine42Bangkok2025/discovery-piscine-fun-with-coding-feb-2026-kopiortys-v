@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNCF Sandwich Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sncf-container">
+        <header class="sncf-header">
+            <div class="logo-container">
+                <div class="sncf-logo">
+                    <div class="train-icon">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <h1>SNCF <span class="logo-text">Sandwich</span></h1>
+                </div>
+                <div class="menu-subtitle">
+                    <p>Ham & Cheese Drop-down Menu</p>
+                </div>
+            </div>
+            <div class="train-info">
+                <div class="info-item">
+                    <span class="info-label">Train 1:</span>
+                    <span class="info-value">Paris → Lyon (216 km/h)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Train 2:</span>
+                    <span class="info-value">Lyon → Paris (224 km/h)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Date:</span>
+                    <span class="info-value">September 12, 1985</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="sandwich-card">
+                <div class="card-header">
+                    <h2>SNCF Classic Ham & Cheese</h2>
+                    <p>Choose your sandwich ingredients from the menu below</p>
+                </div>
+                
+                <!-- The main dropdown menu -->
+                <nav class="sandwich-menu">
+                    <!-- Bread Selection Dropdown -->
+                    <div class="menu-section">
+                        <input type="checkbox" id="bread-dropdown" class="dropdown-checkbox">
+                        <label for="bread-dropdown" class="dropdown-label">
+                            <div class="label-content">
+                                <i class="fas fa-bread-slice"></i>
+                                <span class="label-text">1. Select Your Bread</span>
+                                <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </label>
+                        <div class="dropdown-content">
+                            <div class="menu-item">
+                                <input type="radio" id="baguette" name="bread" checked>
+                                <label for="baguette" class="item-label">
+                                    <span class="item-name">Traditional Baguette</span>
+                                    <span class="item-price">+€0.00</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="ciabatta" name="bread">
+                                <label for="ciabatta" class="item-label">
+                                    <span class="item-name">Ciabatta Roll</span>
+                                    <span class="item-price">+€0.50</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="wholegrain" name="bread">
+                                <label for="wholegrain" class="item-label">
+                                    <span class="item-name">Wholegrain Bread</span>
+                                    <span class="item-price">+€0.30</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cheese Selection Dropdown -->
+                    <div class="menu-section">
+                        <input type="checkbox" id="cheese-dropdown" class="dropdown-checkbox">
+                        <label for="cheese-dropdown" class="dropdown-label">
+                            <div class="label-content">
+                                <i class="fas fa-cheese"></i>
+                                <span class="label-text">2. Select Your Cheese</span>
+                                <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </label>
+                        <div class="dropdown-content">
+                            <div class="menu-item">
+                                <input type="radio" id="emmenthal" name="cheese" checked>
+                                <label for="emmenthal" class="item-label">
+                                    <span class="item-name">Emmenthal</span>
+                                    <span class="item-price">+€0.00</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="cheddar" name="cheese">
+                                <label for="cheddar" class="item-label">
+                                    <span class="item-name">Cheddar</span>
+                                    <span class="item-price">+€0.40</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="brie" name="cheese">
+                                <label for="brie" class="item-label">
+                                    <span class="item-name">Brie</span>
+                                    <span class="item-price">+€0.60</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="goat-cheese" name="cheese">
+                                <label for="goat-cheese" class="item-label">
+                                    <span class="item-name">Goat Cheese</span>
+                                    <span class="item-price">+€0.80</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ham Selection Dropdown -->
+                    <div class="menu-section">
+                        <input type="checkbox" id="ham-dropdown" class="dropdown-checkbox">
+                        <label for="ham-dropdown" class="dropdown-label">
+                            <div class="label-content">
+                                <i class="fas fa-bacon"></i>
+                                <span class="label-text">3. Select Your Ham</span>
+                                <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </label>
+                        <div class="dropdown-content">
+                            <div class="menu-item">
+                                <input type="radio" id="jambon-blanc" name="ham" checked>
+                                <label for="jambon-blanc" class="item-label">
+                                    <span class="item-name">Jambon Blanc</span>
+                                    <span class="item-price">+€0.00</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="jambon-de-paris" name="ham">
+                                <label for="jambon-de-paris" class="item-label">
+                                    <span class="item-name">Jambon de Paris</span>
+                                    <span class="item-price">+€0.50</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="radio" id="bayonne" name="ham">
+                                <label for="bayonne" class="item-label">
+                                    <span class="item-name">Bayonne Ham</span>
+                                    <span class="item-price">+€1.00</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Extras Selection Dropdown -->
+                    <div class="menu-section">
+                        <input type="checkbox" id="extras-dropdown" class="dropdown-checkbox">
+                        <label for="extras-dropdown" class="dropdown-label">
+                            <div class="label-content">
+                                <i class="fas fa-plus-circle"></i>
+                                <span class="label-text">4. Add Extras</span>
+                                <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </label>
+                        <div class="dropdown-content">
+                            <div class="menu-item">
+                                <input type="checkbox" id="butter">
+                                <label for="butter" class="item-label">
+                                    <span class="item-name">Butter</span>
+                                    <span class="item-price">+€0.30</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="checkbox" id="salad">
+                                <label for="salad" class="item-label">
+                                    <span class="item-name">Fresh Salad</span>
+                                    <span class="item-price">+€0.40</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="checkbox" id="tomato">
+                                <label for="tomato" class="item-label">
+                                    <span class="item-name">Tomato Slices</span>
+                                    <span class="item-price">+€0.50</span>
+                                </label>
+                            </div>
+                            <div class="menu-item">
+                                <input type="checkbox" id="pickles">
+                                <label for="pickles" class="item-label">
+                                    <span class="item-name">Pickles</span>
+                                    <span class="item-price">+€0.30</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3><i class="fas fa-receipt"></i> Your SNCF Sandwich</h3>
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span class="summary-label">Bread:</span>
+                            <span class="summary-value">Traditional Baguette</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Cheese:</span>
+                            <span class="summary-value">Emmenthal</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Ham:</span>
+                            <span class="summary-value">Jambon Blanc</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Extras:</span>
+                            <span class="summary-value">None</span>
+                        </div>
+                        <div class="summary-total">
+                            <span class="total-label">Total Price:</span>
+                            <span class="total-price">€4.90</span>
+                        </div>
+                    </div>
+                    <div class="order-button">
+                        <button class="order-btn">
+                            <i class="fas fa-train"></i> Order Sandwich
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Train Riddle Answer -->
+                <div class="riddle-section">
+                    <input type="checkbox" id="riddle-answer" class="riddle-checkbox">
+                    <label for="riddle-answer" class="riddle-label">
+                        <i class="fas fa-question-circle"></i> Which train is furthest from Paris when they cross?
+                    </label>
+                    <div class="riddle-content">
+                        <p>When the two trains cross paths, they are at the <strong>exact same distance from Paris</strong> since they meet at the same point on the track!</p>
+                        <p class="train-details">Train from Paris: 216 km/h • Train from Lyon: 224 km/h • Date: Sept 12, 1985 (Lunar Eclipse)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sncf-info">
+                <p><i class="fas fa-info-circle"></i> This is a pure CSS dropdown menu. No JavaScript used.</p>
+                <p><i class="fas fa-train"></i> Inspired by the classic SNCF ham and cheese sandwich served on French trains.</p>
+            </div>
+        </main>
+        
+        <footer class="sncf-footer">
+            <p>SNCF Sandwich Menu • Pure HTML/CSS • Exercise 01</p>
+            <p>Paris → Lyon / Lyon → Paris • September 12, 1985</p>
+        </footer>
+    </div>
+</body>
+</html>
