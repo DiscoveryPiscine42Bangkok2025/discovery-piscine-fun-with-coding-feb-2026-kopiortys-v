@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        input, select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .operator-select {
+            width: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Basic Calculator</h2>
+        <form id="calcForm">
+            <div class="input-group">
+                <input type="text" id="leftInput" placeholder="Left value" required>
+                <select id="operator" class="operator-select">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="text" id="rightInput" placeholder="Right value" required>
+            </div>
+            <input type="submit" value="Try me!">
+        </form>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('calcForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get input values
+            const leftInput = document.getElementById('leftInput').value;
+            const rightInput = document.getElementById('rightInput').value;
+            const operator = document.getElementById('operator').value;
+            
+            // Validate inputs are positive integers (>= 0)
+            const isPositiveInteger = (str) => /^\d+$/.test(str) && parseInt(str) >= 0;
+            
+            if (!isPositiveInteger(leftInput) || !isPositiveInteger(rightInput)) {
+                alert('Error :(');
+                console.log('Error: Invalid input - not a positive integer');
+                return;
+            }
+            
+            const leftNum = parseInt(leftInput);
+            const rightNum = parseInt(rightInput);
+            
+            // Handle division/modulo by zero
+            if ((operator === '/' || operator === '%') && rightNum === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000! - Division/Modulo by zero");
+                return;
+            }
+            
+            // Perform calculation
+            let result;
+            switch(operator) {
+                case '+':
+                    result = leftNum + rightNum;
+                    break;
+                case '-':
+                    result = leftNum - rightNum;
+                    break;
+                case '*':
+                    result = leftNum * rightNum;
+                    break;
+                case '/':
+                    result = leftNum / rightNum;
+                    break;
+                case '%':
+                    result = leftNum % rightNum;
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+            
+            // Display result
+            alert(`Result: ${result}`);
+            console.log(`Calculation: ${leftNum} ${operator} ${rightNum} = ${result}`);
+        });
+        
+        // Set up the 30-second reminder
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000); // 30 seconds = 30000 milliseconds
+    </script>
+</body>
+</html>
