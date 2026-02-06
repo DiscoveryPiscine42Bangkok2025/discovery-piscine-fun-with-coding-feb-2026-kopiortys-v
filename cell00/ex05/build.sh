@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Check if no arguments were provided
 if [ $# -eq 0 ]; then
     echo "No arguments supplied"
-    exit 1
+    exit 0
 fi
 
-# Loop through all arguments and create directories
-for dir_number in "$@"; do
-    dir_name="ex$dir_number"
-    mkdir -p "$dir_name"
+for arg in "$@"; do
+    mkdir -p "ex$arg"
 done
